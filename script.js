@@ -1,6 +1,6 @@
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 
-const guess = document.querySelector(".guesses");
+const guesses = document.querySelector(".guesses");
 const lastResult = document.querySelector(".lastResult");
 const lowOrHi = document.querySelector(".lowOrHi");
 
@@ -21,7 +21,7 @@ function checkGuess() {
 
     if (userGuess === randomNumber) {
         lastResult.textContent = "Congratulations! You got it right!";
-        lastResult.stylebackgroundColor = "green";
+        lastResult.style.backgroundColor = "green";
         lowOrHi.textContent = "";
         setGameOver();
     }
@@ -65,11 +65,11 @@ function resetGame() {
         resetPara.textContent = "";
     }
 
-    resetButtoon.parentNode.removeChild(resetButton);
+    resetButton.parentNode.removeChild(resetButton);
     guessField.disabled = false;
     guessSubmit.disabled = false;
     guessField.value = "";
     guessField.focus();
     lastResult.style.backgroundColor = "white";
-    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    randomNumber = Math.floor(Math.random() * 100) + 1;
 }   
